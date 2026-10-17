@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI learn｜AI 協作與全端系統實戰課程 (6 個月 132 小時)</title>
+  <meta name="description" content="零程式基礎也能學會！6 個月帶你從 Excel 苦工變身 AI 系統創造者。把 AI 當成你的專屬工程師，親手做出有漂亮畫面、後台資料庫與雲端網址的自動化商務系統。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='16' height='16' x='4' y='4' rx='2'/%3E%3Crect width='6' height='6' x='9' y='9' rx='1'/%3E%3Cpath d='M15 2v2'/%3E%3Cpath d='M15 20v2'/%3E%3Cpath d='M2 15h2'/%3E%3Cpath d='M2 9h2'/%3E%3Cpath d='M20 15h2'/%3E%3Cpath d='M20 9h2'/%3E%3Cpath d='M9 2v2'/%3E%3Cpath d='M9 20v2'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#0b0f19'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#0B0F19] text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-white relative">
+
+  <!-- 頂部氛圍光暈 -->
+  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-indigo-600/25 via-cyan-500/10 to-transparent blur-3xl opacity-70"></div>
+    <div class="absolute top-[800px] -left-40 w-[600px] h-[600px] bg-purple-600/15 blur-3xl opacity-50"></div>
+    <div class="absolute top-[2200px] -right-40 w-[700px] h-[700px] bg-indigo-600/15 blur-3xl opacity-40"></div>
+  </div>
+
+  <!-- 全站微細網格紋理 -->
+  <div class="pointer-events-none fixed inset-0 z-0 bg-grid-pattern opacity-60"></div>
+
+  <!-- ==========================================================================
+       1. 頂部導覽列 (Sticky Glass Navbar)
+       ========================================================================== -->
+  <header class="sticky top-0 z-40 w-full glass-nav transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- 品牌 Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-slate-950 rounded-xl flex items-center justify-center">
+            <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
+          </div>
+        </div>
+        <span class="text-lg font-extrabold tracking-tight text-white">AI learn</span>
+      </a>
+
+      <!-- 桌面端導覽連結 -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#phases" class="hover:text-white transition-colors">學習AI的兩大階段</a>
+        <a href="#testimonials" class="hover:text-white transition-colors">學員口碑</a>
+        <a href="#faq" class="hover:text-white transition-colors">常見問題</a>
+      </nav>
+
+      <!-- 導覽列右側行動呼籲按鈕 -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#enrollment" class="px-5 py-2.5 rounded-xl text-xs font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2">
+          <span>免費預約諮詢</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- 手機版漢堡按鈕 -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- 手機版摺疊導覽選單 -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 glass-panel border-t border-slate-800 space-y-3">
+      <a href="#phases" class="mobile-nav-link block px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg">學習AI的兩大階段</a>
+      <a href="#testimonials" class="mobile-nav-link block px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg">學員真實口碑牆</a>
+      <a href="#faq" class="mobile-nav-link block px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg">常見問題</a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2">
+        <a href="#enrollment" class="w-full text-center py-3 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-md block">
+          立即搶佔早鳥名額
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- ==========================================================================
+         2. 首屏英雄區 (Hero Section)
+         ========================================================================== -->
+    <section class="relative pt-12 pb-12 md:pt-16 md:pb-16 overflow-hidden">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+
+        <!-- 頂部微光徽章 (置左) -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-indigo-500/30 shadow-inner shadow-indigo-500/20 text-xs sm:text-sm font-medium text-indigo-300 mb-6 animate-fade-in hover:border-indigo-400 transition-colors">
+          <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span>🚀 零程式基礎也能學會｜6 個月帶你從 Excel 苦工變身 AI 系統創造者</span>
+        </div>
+
+        <!-- 主標題 (H1: 置左，三行整齊對齊，語意詞組絕不切字) -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.28] max-w-4xl mb-6">
+          <span class="block">不用死背程式碼！</span>
+          <span class="block">
+            <span class="inline-block">把 AI 當成</span><span class="inline-block">你的專屬工程師，</span>
+          </span>
+          <span class="block">
+            <span class="inline-block">親手做出</span><span class="text-gradient-primary inline-block">「能自動處理公事」</span><span class="inline-block">的專屬網站系統</span>
+          </span>
+        </h1>
+
+        <!-- 副標題 (置左，自然換行，絕無孤字落單) -->
+        <p class="text-base sm:text-lg text-slate-300/90 leading-relaxed max-w-3xl mb-8 font-normal">
+          別再只會用 AI 聊天寫文案了！我們用 6 個月時間，帶你從「整理雜亂的日常表單」開始，<br class="hidden md:inline">
+          一步步做出有漂亮畫面、有後台資料庫、還能分享真實網址給同事與客戶使用的雲端自動化系統。
+        </p>
+
+        <!-- 雙行動呼籲按鈕 (置左對齊) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 max-w-xl">
+          <a href="#enrollment" class="px-8 py-4 rounded-xl text-base font-semibold bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white shadow-xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all pulse-glow flex items-center justify-center gap-2 whitespace-nowrap">
+            <i data-lucide="sparkles" class="w-5 h-5 text-cyan-200"></i>
+            <span>立即搶佔早鳥名額</span>
+          </a>
+          <a href="#phases" class="px-7 py-4 rounded-xl text-base font-medium glass-panel text-slate-200 hover:text-white hover:border-cyan-500/50 hover:bg-slate-800/80 transition-all flex items-center justify-center gap-2 group whitespace-nowrap">
+            <i data-lucide="book-open" class="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+            <span>查看學習AI兩大階段</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. 2 大成長階段與完整課表 (Two Transformative Phases & Drawer)
+         ========================================================================== -->
+    <section id="phases" class="scroll-mt-20 pt-12 pb-20 md:pt-16 md:pb-24 bg-slate-950/70 border-t border-slate-900">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Two Learning Phases</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+            學習AI的兩大階段
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400">
+            不用一開始就面對 44 堂課的生硬課表。我們先在第 1 階段讓你能解決眼前痛點，再於第 2 階段帶你打造震撼業界的完整系統。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          
+          <!-- 階段一卡片 -->
+          <div class="p-8 sm:p-10 rounded-3xl glass-panel border border-indigo-500/30 hover:border-indigo-500/60 transition-all glow-card relative flex flex-col justify-between">
+            <div class="absolute -top-3 left-8 px-3.5 py-1 rounded-full text-xs font-bold bg-indigo-600 text-white shadow-md shadow-indigo-500/30">
+              前 3 個月 / 66 小時 / 第 1~11 週
+            </div>
+
+            <div class="pt-2">
+              <div class="flex items-center gap-2 text-indigo-400 text-xs font-semibold mb-2">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                第 1 階段：基礎啟蒙與個人工具自動化
+              </div>
+              <h3 class="text-2xl font-extrabold text-white mb-4">
+                AI 協作與 Web 基礎實戰（堂 1 ~ 堂 22）
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                從零建立 AI 協作思考模式。學習如何把雜亂的 Excel 資料進行清洗與標準化，利用 AI 快速建出網頁畫面、互動表單與資料呈現儀表板，並學會基礎 API 串接與 SQL 查詢。
+              </p>
+
+              <!-- 成果標誌 -->
+              <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 mb-6">
+                <div class="text-xs font-bold text-slate-200 mb-2 flex items-center gap-1.5">
+                  <i data-lucide="award" class="w-4 h-4 text-cyan-400"></i>
+                  第 1 階段成果：你將能做出的實用作品
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  可隨時替換資料的「個人業務數據自動化整理儀表板」，徹底擺脫手動 VLOOKUP 與複製貼上！
+                </p>
+              </div>
+
+              <!-- 週次大綱速覽 -->
+              <div class="space-y-2 text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                  <span>W01~04：AI 協作任務拆解、Prompt 驗證、資料清洗標準化</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                  <span>W05~08：前端表單、JSON 資料傳遞、ERD 繪製與 SQL 語法入門</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+                  <span>W09~11：Dashboard 儀表板實作、API 資料對接與 Node.js 基礎</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button type="button" data-scroll-enrollment data-enroll-note="我想索取第 1 階段（AI 協作與 Web 基礎）完整課綱與簡章" class="w-full py-3.5 rounded-xl text-xs font-bold bg-indigo-600/30 hover:bg-indigo-600 text-indigo-200 hover:text-white border border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/30 transition-all flex items-center justify-center gap-2 group">
+                <span>查看第 1 階段 22 堂課詳細大綱</span>
+                <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- 階段二卡片 -->
+          <div class="p-8 sm:p-10 rounded-3xl glass-panel border border-purple-500/30 hover:border-purple-500/60 transition-all glow-card-purple relative flex flex-col justify-between">
+            <div class="absolute -top-3 left-8 px-3.5 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md shadow-purple-500/30">
+              後 3 個月 / 66 小時 / 第 12~22 週
+            </div>
+
+            <div class="pt-2">
+              <div class="flex items-center gap-2 text-purple-400 text-xs font-semibold mb-2">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                第 2 階段：全端架構與商務系統實戰
+              </div>
+              <h3 class="text-2xl font-extrabold text-white mb-4">
+                資料庫與系統部署專題（堂 23 ~ 堂 44）
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                進入高含金量的全端系統架構。親手實作完整 CRUD 資料庫存取、多表關聯查詢、AI 智慧分類與「AI 判斷 ＋ 人工審核」雙重防護機制。最後完成雲端部署上線與個人商業專題作品！
+              </p>
+
+              <!-- 成果標誌 -->
+              <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 mb-6">
+                <div class="text-xs font-bold text-slate-200 mb-2 flex items-center gap-1.5">
+                  <i data-lucide="award" class="w-4 h-4 text-purple-400"></i>
+                  第 2 階段成果：你將能做出的實用作品
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  擁有真實雲端網址、包含資料庫、權限保護與 AI 決策輔助的「企業級商業整合專題系統」！
+                </p>
+              </div>
+
+              <!-- 週次大綱速覽 -->
+              <div class="space-y-2 text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>W12~15：CRUD 資料庫實作、AI 雙重審核、SQL 多表關聯查詢</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>W16~18：前後端資料流全貫通、批次資料校驗、AI 資安界線</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                  <span>W19~22：Git 版本控制、網站雲端部署、AI 專題開發與成果發表</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button type="button" data-scroll-enrollment data-enroll-note="我想索取第 2 階段（資料庫與系統部署專題）完整課綱與簡章" class="w-full py-3.5 rounded-xl text-xs font-bold bg-purple-600/30 hover:bg-purple-600 text-purple-200 hover:text-white border border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/30 transition-all flex items-center justify-center gap-2 group">
+                <span>查看第 2 階段 22 堂課詳細大綱</span>
+                <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. 倒數早鳥轉換報名表單 (Conversion / Enrollment Section)
+         ========================================================================== -->
+    <section id="enrollment" class="py-20 bg-gradient-to-b from-slate-950 via-[#0B0F19] to-black border-t border-slate-800 relative scroll-mt-16">
+      <!-- 預約區專屬大光暈氛圍層 -->
+      <div class="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-indigo-500/25 via-cyan-500/15 to-transparent blur-3xl opacity-80"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- 倒數限時優惠標頭 -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-indigo-950/90 via-slate-900 to-indigo-950/90 border-2 border-indigo-500/50 text-center mb-12 shadow-[0_0_40px_-10px_rgba(99,102,241,0.4)]">
+          <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-rose-500/25 text-rose-300 border border-rose-500/40 inline-flex items-center gap-1.5 mb-3 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+            <span>🔥 本梯次早鳥優惠名額倒數釋出中</span>
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">
+            別讓未來的自己，繼續每天被繁雜的瑣事綁架
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto mb-6">
+            早鳥預約立即享有現折 $18,000 學費特惠，並免費獲贈「企業級 AI 專案原始碼模板包」與「專屬導師 1 對 1 諮詢」。
+          </p>
+
+          <!-- 倒數計時卡片 -->
+          <div class="flex items-center justify-center gap-3 sm:gap-6 font-mono">
+            <div class="text-center p-3 sm:p-4 rounded-xl bg-slate-950/90 border border-slate-700/80 w-16 sm:w-20 shadow-md">
+              <div id="countdown-days" class="text-2xl sm:text-3xl font-extrabold text-white">03</div>
+              <div class="text-[10px] text-slate-400 mt-1 uppercase font-sans">天</div>
+            </div>
+            <span class="text-xl sm:text-2xl font-bold text-slate-600">:</span>
+            <div class="text-center p-3 sm:p-4 rounded-xl bg-slate-950/90 border border-slate-700/80 w-16 sm:w-20 shadow-md">
+              <div id="countdown-hours" class="text-2xl sm:text-3xl font-extrabold text-white">16</div>
+              <div class="text-[10px] text-slate-400 mt-1 uppercase font-sans">時</div>
+            </div>
+            <span class="text-xl sm:text-2xl font-bold text-slate-600">:</span>
+            <div class="text-center p-3 sm:p-4 rounded-xl bg-slate-950/90 border border-slate-700/80 w-16 sm:w-20 shadow-md">
+              <div id="countdown-mins" class="text-2xl sm:text-3xl font-extrabold text-white">42</div>
+              <div class="text-[10px] text-slate-400 mt-1 uppercase font-sans">分</div>
+            </div>
+            <span class="text-xl sm:text-2xl font-bold text-slate-600">:</span>
+            <div class="text-center p-3 sm:p-4 rounded-xl bg-slate-950/90 border border-slate-700/80 w-16 sm:w-20 shadow-md">
+              <div id="countdown-secs" class="text-2xl sm:text-3xl font-extrabold text-cyan-400">58</div>
+              <div class="text-[10px] text-slate-400 mt-1 uppercase font-sans">秒</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 單一置中放大表單卡片 (移除非必要左側欄，讓表單寬闊顯眼) -->
+        <div class="max-w-3xl mx-auto relative group">
+          <!-- 科技流光外光暈層 (極度顯眼) -->
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-600 rounded-[2.5rem] blur-xl opacity-60 group-hover:opacity-85 transition duration-700 animate-pulse"></div>
+
+          <div id="enrollment-card" class="relative p-8 sm:p-12 md:p-14 rounded-[2.2rem] bg-[#0c1326] border-2 border-indigo-400/70 shadow-[0_0_60px_-10px_rgba(99,102,241,0.55)] transition-all duration-300">
+            
+            <!-- 頂部高注目性標籤 -->
+            <div class="flex items-center justify-between mb-5 flex-wrap gap-2">
+              <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-cyan-400/15 text-cyan-300 border border-cyan-400/40 shadow-inner">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+                <span>📋 官方完整課綱索取 ＆ 席次預約</span>
+              </span>
+              <span class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-500/40 flex items-center gap-1.5">
+                <i data-lucide="flame" class="w-4 h-4 text-rose-400"></i>
+                早鳥名額僅剩 4 席
+              </span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-3 tracking-tight text-center sm:text-left">
+              填寫下方資訊，<span class="text-gradient-cyan">免費索取完整課綱</span>與預約席次
+            </h3>
+            <p class="text-xs sm:text-sm md:text-base text-slate-300 mb-6 text-center sm:text-left">
+              送出後將盡速為您寄送簡章並安排諮詢。
+            </p>
+
+            <!-- 加入 LINE@ 領取近期折扣醒目標題框 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-emerald-500/20 via-teal-500/15 to-indigo-500/20 border-2 border-emerald-500/40 flex items-center gap-4 text-emerald-200 text-xs sm:text-sm mb-8 shadow-md">
+              <div class="w-11 h-11 rounded-xl bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center flex-shrink-0 text-emerald-300 shadow-md">
+                <i data-lucide="gift" class="w-6 h-6 animate-bounce"></i>
+              </div>
+              <div class="leading-relaxed">
+                <span class="font-bold text-white block sm:inline">【重要限時折扣提醒】</span>
+                填寫送出後將顯示專屬 QR Code，<strong class="text-emerald-300 underline decoration-emerald-300 underline-offset-2 font-bold">請務必加入官方 LINE@ 領取「近期專屬限時折扣」</strong>！
+              </div>
+            </div>
+
+            <form id="enrollment-form" class="space-y-4">
+              <!-- 姓名 -->
+              <div>
+                <label for="enroll-name" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5">
+                  真實姓名 <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <i data-lucide="user" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                  <input type="text" id="enroll-name" name="name" required placeholder="例：林小宇" class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner">
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="enroll-email" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5">
+                  電子郵件 <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <i data-lucide="mail" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                  <input type="email" id="enroll-email" name="email" required placeholder="name@company.com" class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner">
+                </div>
+              </div>
+
+              <!-- 手機 / 聯絡電話 -->
+              <div>
+                <label for="enroll-phone" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5">
+                  手機號碼 (聯絡確認諮詢時段) <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <i data-lucide="phone" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                  <input type="tel" id="enroll-phone" name="phone" required placeholder="例：0912-345-678" class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner">
+                </div>
+              </div>
+
+              <!-- 職業背景 (手動填寫 ＋ 符號防呆) -->
+              <div>
+                <label for="enroll-role" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5">
+                  目前的職業背景 <span class="text-rose-400">*</span>
+                </label>
+                <div class="relative">
+                  <i data-lucide="briefcase" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                  <input type="text" id="enroll-role" name="role" required maxlength="30" placeholder="請填寫您的職位或職業（請勿輸入特殊符號）" class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner">
+                </div>
+              </div>
+
+              <!-- LINE ID 提醒加入 LINE@ 領折扣 -->
+              <div>
+                <label for="enroll-line" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5 flex items-center justify-between">
+                  <span>LINE ID (選填)</span>
+                  <span class="text-[11px] text-emerald-400 font-bold">🔥 一定要加入 LINE@ 領近期折扣</span>
+                </label>
+                <div class="relative">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                  <input type="text" id="enroll-line" name="line_id" placeholder="例：jerry_line_id" class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner">
+                </div>
+              </div>
+
+              <!-- 備註與自測結果 -->
+              <div>
+                <label for="enroll-notes" class="block text-xs sm:text-sm font-bold text-slate-100 mb-1.5">
+                  您目前最想解決的日常痛點 / 欲索取之課綱項目
+                </label>
+                <textarea id="enroll-notes" name="notes" rows="2" placeholder="例：希望索取完整 44 堂課課綱，或透過 AI 自動化整理業務進銷存報表..." class="w-full p-3.5 rounded-xl bg-[#131b31] border border-slate-600 focus:border-cyan-400 focus:bg-[#0f172a] focus:ring-2 focus:ring-cyan-400/30 text-white text-xs sm:text-sm placeholder-slate-400 font-medium transition-all outline-none shadow-inner"></textarea>
+              </div>
+
+              <!-- 送出按鈕 (極致顯眼高對比呼吸光暈) -->
+              <button type="submit" id="enroll-submit-btn" class="w-full py-5 sm:py-5.5 rounded-2xl text-lg sm:text-xl font-black bg-gradient-to-r from-cyan-500 via-indigo-600 to-cyan-500 hover:from-cyan-400 hover:via-indigo-500 hover:to-cyan-400 text-white shadow-[0_0_45px_rgba(6,182,212,0.65)] hover:shadow-[0_0_65px_rgba(6,182,212,0.95)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 border-2 border-cyan-300/80 flex items-center justify-center gap-3 mt-6 cursor-pointer relative overflow-hidden group">
+                <span class="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></span>
+                <i data-lucide="sparkles" class="w-6 h-6 text-amber-300 animate-pulse"></i>
+                <span class="tracking-wide">立即送出預約・領取專屬 LINE@ 折扣</span>
+                <i data-lucide="arrow-right" class="w-6 h-6 text-cyan-200 group-hover:translate-x-1.5 transition-transform"></i>
+              </button>
+
+              <!-- 資料隱私與安全小提示 -->
+              <div class="text-center pt-3 text-xs text-slate-400 flex items-center justify-center gap-1.5">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                <span>資料安全承諾：聯絡資訊受到嚴密保護，僅用於發送課綱簡章與安排諮詢，絕不外流。</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. 學員真實口碑牆 (Social Proof / Wall of Love)
+         ========================================================================== -->
+    <section id="testimonials" class="py-20 bg-slate-950/60 border-t border-slate-900 reveal-init">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Wall of Love</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+            學員真實口碑！看看他們如何靠 AI 擺脫職場苦力
+          </h2>
+          <p class="text-sm sm:text-base text-slate-400">
+            從行政、營運、行銷到轉職小白，他們都親手把專屬的雲端系統做出來了。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- 口碑卡片 1 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  林特助
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">林小姐｜外商行政特助 (32歲)</h4>
+                  <div class="text-[11px] text-indigo-400 font-medium">零程式基礎・文組畢業</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">超滿意成果</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「以前每個月底都要人工對帳 500 筆報銷單，眼睛快瞎了。這門課最棒的是老師教我們用白話文指揮 AI 寫出自動核銷系統，現在主管丟 CSV 進去 3 秒就產出異常報表，主管甚至主動幫我提報加薪！」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：企業智能報銷審查系統</span>
+              <span class="text-emerald-400 font-medium">節省 85% 作業時間</span>
+            </div>
+          </div>
+
+          <!-- 口碑卡片 2 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card-cyan flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  陳經理
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">陳先生｜電商營運主管 (36歲)</h4>
+                  <div class="text-[11px] text-cyan-400 font-medium">前 Excel 苦工・經營 3 家網店</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">省下高額外包費</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「找外包做庫存串接系統，對方開價 40 萬還要等 3 個月。上這門課學會 Node.js API 加上資料庫多表關聯，搭配 AI 幫我除錯，我自己在第 5 個月就全部寫出來並上線雲端，真的太有成就感！」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：跨通路庫存即時預警系統</span>
+              <span class="text-cyan-400 font-medium">省下 40 萬外包預算</span>
+            </div>
+          </div>
+
+          <!-- 口碑卡片 3 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card-purple flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  許企劃
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">許小姐｜數位行銷企劃 (28歲)</h4>
+                  <div class="text-[11px] text-purple-400 font-medium">渴望技術獨立的行銷人</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">活動轉換率翻倍</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「每次辦行銷活動求工程師做測驗頁面都排不到。現在我學會自己用 AI 產生高顏值互動介面，還串了 LINE Bot 與名單自動同步資料庫，這次活動名單獲取成本比去年直接降低了 62%。」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：AI 互動名單收集與問答系統</span>
+              <span class="text-purple-400 font-medium">上線 3 天收單 1,200+</span>
+            </div>
+          </div>
+
+          <!-- 口碑卡片 4 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  張PM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">張小姐｜資深產品經理 (34歲)</h4>
+                  <div class="text-[11px] text-emerald-400 font-medium">技術話語權提升</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">溝通效率翻倍</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「以前跟工程團隊開會常常被各種 API、資料庫名詞唬住。上完這門課後，我親手做過整套 CRUD 與 ERD，現在寫規格書精準無比，工程師看到我都說我的規格寫得比他們資深工程師還清楚！」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：敏捷專案排程雲端協同系統</span>
+              <span class="text-emerald-400 font-medium">驗收溝通成本 -70%</span>
+            </div>
+          </div>
+
+          <!-- 口碑卡片 5 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card-cyan flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  游工程
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">游先生｜文科跨領域轉職 (29歲)</h4>
+                  <div class="text-[11px] text-amber-400 font-medium">成功拿到 Offer</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">面試一次過關</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「其他轉職者面試時只能拿練習用的假電商畫面，而我直接打開在 Vercel 雲端上線的 AI 全端管理系統，甚至能現場 Demo 人工審核與資料庫查詢，面試官當場決定錄取我為全端工程師！」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：商業級智慧工單分派管理平台</span>
+              <span class="text-amber-400 font-medium">成功轉職起薪 +35%</span>
+            </div>
+          </div>
+
+          <!-- 口碑卡片 6 -->
+          <div class="p-6 rounded-2xl glass-panel border border-slate-800 glow-card-purple flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                  黃顧問
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">黃小姐｜自媒體與接案顧問 (30歲)</h4>
+                  <div class="text-[11px] text-indigo-400 font-medium">自由工作者</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-1 text-amber-400 mb-3 text-xs">
+                ★★★★★ <span class="text-slate-400 text-[11px] ml-1">建立被動系統</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                「不用再被國外昂貴的 SaaS 訂閱制綁架！我自己為付費社群做了一套專屬的 AI 諮詢小助手與資源檢索系統，客戶反饋超好，未來還打算把這套系統當作服務方案賣給其他同業。」
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+              <span>畢業專題：私域會員專屬 AI 知識庫</span>
+              <span class="text-indigo-400 font-medium">每月節省 $6,000 軟體費</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         8. 常見問題手風琴 (FAQ Accordion)
+         ========================================================================== -->
+    <section id="faq" class="py-20 relative reveal-init">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Questions & Answers</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+            消除你的所有顧慮！新手常見問題
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-400">
+            針對零基礎、時間安排與實戰成效，我們為你準備了最真誠的大白話解答。
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+            <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+              <span class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <span class="text-indigo-400 font-mono">Q1.</span>
+                我完全沒有任何寫程式的背景，數學跟英文也很普通，真的學得會嗎？
+              </span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+              絕對可以！本課程是專門為「非技術背景職場人士」所設計。我們不再要求你一行行背誦艱澀的語法，而是教你「如何用清晰的邏輯和指令，指揮 AI 幫你寫程式碼」。你扮演的是『產品經理與架構指揮官』，只要會打字、有解決工作痛點的想法，AI 就能幫你處理 90% 的程式碼細節。
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+            <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+              <span class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <span class="text-indigo-400 font-mono">Q2.</span>
+                上完 6 個月後做出來的成品，真的能給同事、主管或面試官使用嗎？
+              </span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+              是的！我們在第 2 階段會完整帶大家進行「雲端平台部署」與「真實網址設定」。你的系統不會只死在自己的筆電裡，而是會擁有自己的專屬網址、資料庫與安全憑證。你可以直接把網址傳給主管使用、整合至公司日常業務，或是直接附在履歷自傳中作為殺手級專案展示。
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+            <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+              <span class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                <span class="text-indigo-400 font-mono">Q3.</span>
+                平時有正職工作，每週大概需要花多少時間學習與練習？
+              </span>
+              <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+              課程為期 22 週（共 132 小時實體/線上實戰教學，每週約 6 小時）。建議平日每天預留 45~60 分鐘跟著實作範例消化。所有課程皆提供全程高清錄影與程式碼範本，萬一出差或加班請假，也可以隨時隨地無限次回看複習，進度絕不落後。
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+            <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+              <span class="text-indigo-400 font-mono">Q4.</span>
+              學習過程中如果遇到 Bug 或卡關，有助教可以協助嗎？
+            </span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            我們建立了專屬的 VIP 學員交流群與專屬助教答疑機制！除了課堂上即時互動與示範，平時遇到問題可以在社群發問，助教與導師都會在線支援；更重要的是，我們還會教你專屬的「AI 除錯心法」，讓 AI 先當你的第一道 24 小時即時助教，90% 的小卡關都能在 5 分鐘內自行迎刃而解。
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+          <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 font-mono">Q5.</span>
+              這門課跟市面上幾百元的「ChatGPT 提示詞課」有什麼本質不同？
+            </span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            一般提示詞課程只教你在對話框輸入文字、改改行銷文案，無法幫你產出「具備資料庫、可儲存狀態、能分享給大眾使用的持久系統」。本課程是完整的「AI 協作全端工程培育」，教你從資料庫設計 (SQL)、API 串接、前端高顏值 UI 到全球雲端部署，真正讓你具備建立獨立商業軟體的造物能力。
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item rounded-2xl glass-panel border border-slate-800 transition-all">
+          <button type="button" class="faq-trigger w-full p-6 text-left flex items-center justify-between gap-4">
+            <span class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 font-mono">Q6.</span>
+              支援信用卡分期付款嗎？公司報帳可以開立統編發票嗎？
+            </span>
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer px-6 pb-6 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-4">
+            完全支援！我們提供各大主流銀行 3 / 6 / 12 期零利率分期方案，大幅降低學習負擔。若需由公司企業訓練經費補助報銷，我們亦可開立符合會計審核標準的合法統編發票（電子發票或紙本發票），方便你順利請款核銷。
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- ==========================================================================
+       頁尾 (Footer)
+       ========================================================================== -->
+  <footer class="bg-black border-t border-slate-900 py-12 relative z-10 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-900">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+          <span class="text-sm font-bold text-slate-200">AI learn</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="#phases" class="hover:text-slate-300 transition-colors">學習AI的兩大階段</a>
+          <a href="#testimonials" class="hover:text-slate-300 transition-colors">學員口碑</a>
+          <a href="#faq" class="hover:text-slate-300 transition-colors">常見問題</a>
+        </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div>
+          © 2026 AI learn. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="hover:text-slate-400 cursor-pointer">隱私權保護政策</span>
+          <span>•</span>
+          <span class="hover:text-slate-400 cursor-pointer">學員服務條款</span>
+          <span>•</span>
+          <span>客服信箱：support@aifullstacklab.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       完整 44 堂課抽屜 (Slide-Over Drawer)
+       ========================================================================== -->
+  <div id="curriculum-backdrop" class="drawer-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex justify-end">
+    <div id="curriculum-drawer" class="drawer-content w-full max-w-2xl h-full bg-[#0B0F19] border-l border-slate-800 shadow-2xl flex flex-col">
+      
+      <!-- 抽屜頂部標題與關閉按鈕 -->
+      <div class="p-6 border-b border-slate-800 flex items-center justify-between gap-4 flex-shrink-0">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-bold text-white">44 堂課完整專業技術大綱</h3>
+            <span id="curriculum-count-badge" class="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+              共 44 堂
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1">22 週循序漸進・從 AI 協作思維至全球雲端部署</p>
+        </div>
+        <button type="button" id="close-curriculum-drawer" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- 抽屜篩選與搜尋工具列 -->
+      <div class="p-4 border-b border-slate-800 bg-slate-900/40 space-y-3 flex-shrink-0">
+        <!-- 搜尋列 -->
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2"></i>
+          <input type="text" id="curriculum-search" placeholder="搜尋堂次、課名、模組或學習重點（例：Prompt、SQL、API）..." class="w-full pl-9 pr-4 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:border-indigo-500 text-xs text-white placeholder-slate-600 outline-none">
+        </div>
+
+        <!-- 階段篩選標籤 -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1">
+          <button type="button" data-curriculum-filter="all" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white shadow-sm shadow-indigo-500/30 transition-all">
+            全部課程 (44 堂)
+          </button>
+          <button type="button" data-curriculum-filter="phase1" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 bg-slate-800/80 hover:bg-slate-700 transition-all">
+            第一階段：基礎實戰 (堂 1~22)
+          </button>
+          <button type="button" data-curriculum-filter="phase2" class="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 bg-slate-800/80 hover:bg-slate-700 transition-all">
+            第二階段：專題部署 (堂 23~44)
+          </button>
+        </div>
+      </div>
+
+      <!-- 課程列表清單 (可捲動區塊) -->
+      <div id="curriculum-lessons-list" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-3">
+        <!-- 由 js/app.js 動態渲染 -->
+      </div>
+
+      <!-- 抽屜底部快速 CTA -->
+      <div class="p-4 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between gap-4 flex-shrink-0">
+        <div class="text-xs text-slate-400">
+          <span>對課表有任何疑問？</span>
+        </div>
+        <a href="#enrollment" onclick="document.getElementById('close-curriculum-drawer').click();" class="px-4 py-2 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-md transition-all">
+          前往預約諮詢
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast 訊息通知框 -->
+  <div id="enroll-toast" class="hidden"></div>
+
+  <!-- ==========================================================================
+       LINE@ QR Code 專屬折扣彈窗 Modal (送出表單後即刻彈出)
+       ========================================================================== -->
+  <div id="line-modal-backdrop" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div id="line-modal" class="relative w-full max-w-md bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-emerald-500/50 rounded-3xl p-6 sm:p-8 shadow-2xl text-center transform scale-95 opacity-0 transition-all duration-300">
+      
+      <!-- 關閉按鈕 -->
+      <button type="button" id="close-line-modal" class="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- 頂部高光徽章 -->
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-xs font-semibold mb-3">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>預約成功</span>
+      </div>
+
+      <!-- 醒目標題 -->
+      <h3 class="text-xl sm:text-2xl font-extrabold text-white mb-2 leading-tight">
+        加入 LINE@ <span class="text-gradient-cyan">領取近期折扣</span>
+      </h3>
+      <p class="text-xs text-slate-300 mb-5">
+        發送 <span class="text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">「領取近期折扣」</span> 立即取得專屬優惠！
+      </p>
+
+      <!-- 附件 LINE QR Code 圖片卡片 -->
+      <div class="relative inline-block p-4 rounded-2xl bg-white shadow-2xl shadow-emerald-500/20 mb-5 border-4 border-emerald-500/40 group">
+        <img src="img/line-qrcode.png" alt="官方 LINE@ QR Code" class="w-52 h-52 object-contain mx-auto">
+        <div class="text-[11px] font-bold text-slate-800 mt-2 font-mono flex items-center justify-center gap-1">
+          <i data-lucide="scan" class="w-3.5 h-3.5 text-emerald-600"></i>
+          <span>掃描 QR Code</span>
+        </div>
+      </div>
+
+      <!-- 行動按鈕組 -->
+      <div class="space-y-2.5">
+        <a href="https://lin.ee/TuMaW69" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#06C755] hover:bg-[#05b04c] text-white shadow-xl shadow-emerald-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>加入 LINE 好友領取折扣</span>
+        </a>
+
+        <button type="button" id="confirm-line-modal" class="w-full py-2 rounded-xl text-xs text-slate-400 hover:text-slate-200 transition-colors">
+          我已加入，關閉視窗
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 引用 JavaScript 資料與互動檔 -->
+  <script src="js/curriculum.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

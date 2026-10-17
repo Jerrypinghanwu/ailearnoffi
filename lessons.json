@@ -1,0 +1,362 @@
+[
+  {
+    "phase": "階段",
+    "week": "週次",
+    "lesson": "堂次",
+    "title": "課程主題",
+    "module": "主要模組",
+    "description": "核心學習內容"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 1 週",
+    "lesson": "堂 1",
+    "title": "AI 協作與任務拆解",
+    "module": "AI 協作與智慧工作方法",
+    "description": "建立 AI 協作思維，學習如何將複雜問題拆解為可執行任務"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 1 週",
+    "lesson": "堂 2",
+    "title": "AI 網頁應用入門",
+    "module": "AI 前端與資訊呈現",
+    "description": "快速運用 AI 協助生成動態網頁與初步視覺介面"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 2 週",
+    "lesson": "堂 3",
+    "title": "資料結構與欄位設計基礎",
+    "module": "資料資訊化基礎",
+    "description": "理解資料型別、欄位規劃與資料結構設計"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 2 週",
+    "lesson": "堂 4",
+    "title": "Prompt 設計與成果驗證",
+    "module": "AI 協作與智慧工作方法",
+    "description": "精準編寫 Prompt，設定角色、限制條件並驗證產出結果"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 3 週",
+    "lesson": "堂 5",
+    "title": "資料清理基礎",
+    "module": "資料資訊化基礎",
+    "description": "處理缺失值、異常值與不一致的原始資料"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 3 週",
+    "lesson": "堂 6",
+    "title": "資料標準化基礎",
+    "module": "資料資訊化基礎",
+    "description": "建立統一的資料格式規範與分類結構"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 4 週",
+    "lesson": "堂 7",
+    "title": "AI 協作流程設計",
+    "module": "AI 協作與智慧工作方法",
+    "description": "設計自動化與半自動化的 AI 輔助工作流程"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 4 週",
+    "lesson": "堂 8",
+    "title": "JavaScript 程式邏輯入門",
+    "module": "AI 前端與資訊呈現",
+    "description": "掌握 JavaScript 基礎邏輯（變數、判斷式、迴圈）"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 5 週",
+    "lesson": "堂 9",
+    "title": "表單與資料輸入實作",
+    "module": "AI 前端與資訊呈現",
+    "description": "設計前端互動表單與資料收集介面"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 5 週",
+    "lesson": "堂 10",
+    "title": "JSON 與資料交換基礎",
+    "module": "程式、API與資料庫整合",
+    "description": "理解 JSON 資料格式與結構化傳遞"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 6 週",
+    "lesson": "堂 11",
+    "title": "AI 協作除錯方法",
+    "module": "AI 協作與智慧工作方法",
+    "description": "學會將 Code 錯誤訊息提供給 AI，進行高效 Debug"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 6 週",
+    "lesson": "堂 12",
+    "title": "前端介面設計實作",
+    "module": "AI 前端與資訊呈現",
+    "description": "優化網頁版面配置與使用者操作體驗"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 7 週",
+    "lesson": "堂 13",
+    "title": "資料品質與驗證基礎",
+    "module": "資料資訊化基礎",
+    "description": "設定資料檢查機制與欄位驗證邏輯"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 7 週",
+    "lesson": "堂 14",
+    "title": "關聯資料與 ERD 入門",
+    "module": "資料資訊化基礎",
+    "description": "學習關聯式資料庫邏輯與 ERD 資料實體圖繪製"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 8 週",
+    "lesson": "堂 15",
+    "title": "SQL 查詢入門",
+    "module": "程式、API與資料庫整合",
+    "description": "學習基本 SQL 語法（SELECT、WHERE、ORDER BY）"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 8 週",
+    "lesson": "堂 16",
+    "title": "API 概念與資料交換",
+    "module": "程式、API與資料庫整合",
+    "description": "理解 HTTP 請求、API 作用與資料對接觀念"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 9 週",
+    "lesson": "堂 17",
+    "title": "AI 資料分析入門",
+    "module": "AI 資料處理與分析",
+    "description": "運用 AI 協助進行基礎數據統計與分析提煉"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 9 週",
+    "lesson": "堂 18",
+    "title": "Dashboard 資訊呈現實作",
+    "module": "AI 前端與資訊呈現",
+    "description": "設計前端數據儀表板與視覺化圖表"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 10 週",
+    "lesson": "堂 19",
+    "title": "前端 API 串接實作",
+    "module": "程式、API與資料庫整合",
+    "description": "使用 JavaScript 發送 API 請求並將資料呈現於網頁"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 10 週",
+    "lesson": "堂 20",
+    "title": "數據判讀與 AI 輔助分析",
+    "module": "AI 資料處理與分析",
+    "description": "結合 AI 進行數據趨勢洞察與摘要報告生成"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 11 週",
+    "lesson": "堂 21",
+    "title": "後端程式與 API 入門",
+    "module": "程式、API與資料庫整合",
+    "description": "理解 Node.js 後端運作原理與基礎 API 開發"
+  },
+  {
+    "phase": "第一階段：AI 協作與 Web 基礎實戰（前 3 個月 / 66 小時）",
+    "week": "第 11 週",
+    "lesson": "堂 22",
+    "title": "資料狀態與生命週期概念",
+    "module": "資料資訊化基礎",
+    "description": "掌握資料從產生、變更、存檔到刪除的生命週期"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 12 週",
+    "lesson": "堂 23",
+    "title": "AI 協作開發與程式檢視",
+    "module": "AI 協作與智慧工作方法",
+    "description": "運用 AI 進行 Code Review 與程式結構優化"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 12 週",
+    "lesson": "堂 24",
+    "title": "CRUD 與資料存取實作",
+    "module": "程式、API與資料庫整合",
+    "description": "實作資料庫的新增 (Create)、讀取 (Read)、更新 (Update)、刪除 (Delete)"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 13 週",
+    "lesson": "堂 25",
+    "title": "AI 分類與信心機制入門",
+    "module": "AI 資料處理與分析",
+    "description": "設計 AI 自動資料分類與邏輯判斷機制"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 13 週",
+    "lesson": "堂 26",
+    "title": "AI 追問與人工覆核設計",
+    "module": "AI 資料處理與分析",
+    "description": "建立「AI 產出 + 人工審核 (Human-in-the-loop)」的雙重驗證流程"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 14 週",
+    "lesson": "堂 27",
+    "title": "流程狀態與責任資料設計",
+    "module": "資料資訊化基礎",
+    "description": "設計業務流程中的狀態流轉與權限責任紀錄"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 14 週",
+    "lesson": "堂 28",
+    "title": "SQL 關聯查詢基礎",
+    "module": "程式、API與資料庫整合",
+    "description": "掌握多表關聯查詢（JOIN、GROUP BY、HAVING）"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 15 週",
+    "lesson": "堂 29",
+    "title": "AI 結構化輸出基礎",
+    "module": "AI 協作與智慧工作方法",
+    "description": "控制 AI 穩定輸出 JSON 或標準格式資料"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 15 週",
+    "lesson": "堂 30",
+    "title": "證據式 AI 分析概念",
+    "module": "AI 資料處理與分析",
+    "description": "要求 AI 提供分析依據與佐證邏輯，避免幻覺"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 16 週",
+    "lesson": "堂 31",
+    "title": "Dashboard 鑽取分析實作",
+    "module": "AI 資料處理與分析",
+    "description": "製作可互動、可向下鑽取詳細資料的進階儀表板"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 16 週",
+    "lesson": "堂 32",
+    "title": "前後端資料流整合",
+    "module": "程式、API與資料庫整合",
+    "description": "完整貫通「前端介面 ↔ 後端 API ↔ 資料庫」資料流"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 17 週",
+    "lesson": "堂 33",
+    "title": "資料匯入與驗證實作",
+    "module": "資料資訊化基礎",
+    "description": "實作批次資料（如 CSV/Excel）匯入與自動化檢查"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 17 週",
+    "lesson": "堂 34",
+    "title": "AI 結果評估方法",
+    "module": "AI 協作與智慧工作方法",
+    "description": "建立 AI 產出品質評估標準與測試案例"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 18 週",
+    "lesson": "堂 35",
+    "title": "AI 風險與安全界線",
+    "module": "AI 協作與智慧工作方法",
+    "description": "了解 AI 應用資安風險、敏感資料保護與合規界線"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 18 週",
+    "lesson": "堂 36",
+    "title": "AI 應用介面整合實作",
+    "module": "AI 前端與資訊呈現",
+    "description": "將 AI 生成能力與動態 UI 進行深度整合"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 19 週",
+    "lesson": "堂 37",
+    "title": "Git 版本控制基礎",
+    "module": "系統部署與資訊安全",
+    "description": "掌握 Git 基礎指令、版本控管與程式備份"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 19 週",
+    "lesson": "堂 38",
+    "title": "API Key 與應用安全基礎",
+    "module": "系統部署與資訊安全",
+    "description": "學習環境變數管理、API Key 安全隱藏與基本資安觀念"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 20 週",
+    "lesson": "堂 39",
+    "title": "網站雲端部署實作",
+    "module": "系統部署與資訊安全",
+    "description": "將前後端系統與資料庫部署上線至雲端平台"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 20 週",
+    "lesson": "堂 40",
+    "title": "系統測試與維運基礎",
+    "module": "系統部署與資訊安全",
+    "description": "基礎系統功能測試、錯誤監控與雲端維運"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 21 週",
+    "lesson": "堂 41",
+    "title": "專題問題定義與規格整理",
+    "module": "AI 資訊化整合專題",
+    "description": "鎖定實際工作痛點，進行系統需求與規格設計"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 21 週",
+    "lesson": "堂 42",
+    "title": "AI 資訊化專題開發",
+    "module": "AI 資訊化整合專題",
+    "description": "在導師指導下進行專題系統開發與 AI 功能串接"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 22 週",
+    "lesson": "堂 43",
+    "title": "專題測試與成果展示",
+    "module": "AI 資訊化整合專題",
+    "description": "進行系統整合測試與專題簡報/Demo 展示"
+  },
+  {
+    "phase": "第二階段：資料庫與系統部署專題（後 3 個月 / 66 小時）",
+    "week": "第 22 週",
+    "lesson": "堂 44",
+    "title": "專題修正與作品整理",
+    "module": "AI 資訊化整合專題",
+    "description": "依據建議優化系統，完成個人專屬雲端作品集部署"
+  }
+]
